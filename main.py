@@ -1,6 +1,10 @@
 import json
-with open("cofre.json", "r") as ficheiro:
-    utilizadores = json.load(ficheiro)
+try:
+    with open("cofre.json", "r") as ficheiro:
+        utilizadores = json.load(ficheiro)
+except FileNotFoundError:
+    utilizadores = {}
+
 while True:
     selecao = int(input("""
 ========================================
@@ -38,4 +42,4 @@ while True:
         
     else:
         print("\nOpção inválida! Tente novamente.")
-        #diogotop5programadordasuacasa
+        
