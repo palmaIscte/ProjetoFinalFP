@@ -25,3 +25,6 @@ while True:
         
     else:
         print("\nOpção inválida! Tente novamente.")
+
+aiwdaiwh
+        #olaaaa
