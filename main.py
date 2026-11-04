@@ -1,3 +1,6 @@
+import json
+with open("cofre.json", "r") as ficheiro:
+    utilizadores = json.load(ficheiro)
 while True:
     selecao = int(input("""
 ========================================
