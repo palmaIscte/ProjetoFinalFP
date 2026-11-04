@@ -38,3 +38,4 @@ while True:
         
     else:
         print("\nOpção inválida! Tente novamente.")
+        #diogotop5programadordasuacasa
