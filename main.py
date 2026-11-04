@@ -6,7 +6,8 @@ except FileNotFoundError:
     utilizadores = {}
 
 while True:
-    selecao = int(input("""
+    try:
+        selecao = int(input("""
 ========================================
         PYVAULT: COFRE DIGITAL CLI           
 ======================================== 
@@ -15,6 +16,9 @@ while True:
  2. Iniciar Sessão (Login) 
  0. Sair do Programa
 -> Escolha uma opção: """))
+    except ValueError:
+        print("\nOpção inválida! Por favor escreva um número.")
+        continue
 
     if selecao == 1:
         print("\n[ Registo de Utilizador selecionado ]")
