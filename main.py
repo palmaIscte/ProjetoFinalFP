@@ -25,3 +25,5 @@ while True:
         
     else:
         print("\nOpção inválida! Tente novamente.")
+        abanna
+        
