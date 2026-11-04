@@ -14,7 +14,17 @@ while True:
 
     if selecao == 1:
         print("\n[ Registo de Utilizador selecionado ]")
-        
+        username = input("Digite o seu nome de username: ")
+        palavra_passe = input("Digite a sua palavra-passe: ")
+
+        if username in utilizadores:
+            print("O username já existe. Por favor, escolha outro.")
+        else:
+            utilizadores[username] = palavra_passe
+            with open("cofre.json", "w") as ficheiro:
+                json.dump(utilizadores, ficheiro)
+            print("Registo efetuado com sucesso!")
+
         input("\nPressione ENTER para voltar ao menu principal...")
          
     elif selecao == 2:
