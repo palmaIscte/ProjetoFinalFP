@@ -5,6 +5,9 @@ try:
 except FileNotFoundError:
     utilizadores = {}
 
+
+contErradas = 0
+
 while True:
     try:
         selecao = int(input("""
@@ -36,9 +39,29 @@ while True:
         input("\nPressione ENTER para voltar ao menu principal...")
          
     elif selecao == 2:
-        print("\n[ Iniciar Sessão (Login) selecionado ]")
-        
-        input("\nPressione ENTER para voltar ao menu principal...")
+        while True:
+            print("\n[ Iniciar Sessão (Login) selecionado ]")
+            input_username = input("Digite o seu nome de username: ")
+            input_palavra_passe = input("Digite a sua palavra-passe: ")
+            if input_username in utilizadores and utilizadores[input_username] == input_palavra_passe:
+                print("\nLogin efetuado com sucesso!")
+                contErradas = 0
+                #LOGICA DE NOTAS A SER IMPLEMENTADA 
+
+
+            else:
+                print("\nUsername ou palavra-passe incorretos.")
+                contErradas += 1
+                if contErradas >= 3:
+                    print("\nNúmero máximo de tentativas atingido. Saindo do programa...")
+                    break
+                try:
+                    nova_tentativa = int(input("\nPressione 1 para efetuar nova tentativa ou 0 para sair: "))
+                    if nova_tentativa == 0:
+                        break
+                except ValueError:
+                    print("\nOpção inválida! Por favor escreva um número.")
+                    continue
 
     elif selecao == 0:
         print("\nSaindo do programa...")
